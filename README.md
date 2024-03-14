@@ -51,10 +51,19 @@ plt.grid(True) # Turn on the grid lines in the plot
 plt.show() # Display the plot 
 
 
+#Check for trends, seasonality, and p-value to determine if time series is stationary.
+#Use Augmented Dickey Fuller Test (ADF Test) to test if time series is stationary or not.
+#Perform differencing if necessary to make time series stationary.
 
 
+df_decompose = pd.read_excel('monthly-champagne-sales.xlsx') 
 
+# Convert the 'Month' column in the DataFrame to datetime format using the pd.to_datetime() function
+df_decompose['Month'] = pd.to_datetime(df_decompose['Month']) 
+df_decompose 
 
+df_decompose.set_index('Month',inplace=True) 
+df_decompose.head() 
 
 
 
