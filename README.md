@@ -1,7 +1,21 @@
 # ARIMA_30
 Arima model 
 ``` python
+#import the necessary libraries 
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from statsmodels.tsa.arima.model import ARIMA
+import matplotlib.pyplot as plt 
+import warnings
+warnings.filterwarnings('ignore')
 
+# Read the Excel file 'monthly-champagne-sales.xlsx' into a DataFrame called df 
+df = pd.read_excel('monthly-champagne-sales.xlsx') 
+
+# Convert the 'Month' column in the DataFrame to datetime format using the pd.to_datetime() function
+df['Month'] = pd.to_datetime(df['Month']) 
+
+df.head() 
 
 
 
